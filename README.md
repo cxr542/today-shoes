@@ -56,3 +56,6 @@ npx expo export -p web
 | `npm run web` | 개발 서버 (웹) |
 | `npm run build:web` | 정적 export (`dist/`) |
 | `npm run import-uploads` | `uploads/` → 시드 등록 |
+=======
+# today-shoes
+>>>>>>> 8d279e80df11eadfd720f4be61a216a6b3b6fe8d
