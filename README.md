@@ -37,7 +37,8 @@ git push -u origin main
 3. **Settings** → **Pages** → **Build and deployment** → Source: **GitHub Actions**
 4. `main`에 push 후 **Actions** 탭에서 워크플로 완료 확인
 
-배포 URL 예시: `https://cxr542.github.io/today-shoes/`
+- 저장소: https://github.com/cxr542/today-shoes  
+- 배포 URL: https://cxr542.github.io/today-shoes/
 
 > API 키는 빌드 시 클라이언트 번들에 포함됩니다. 공개 저장소라면 키 노출·악용에 유의하고, 필요 시 API 키에 HTTP 리퍼러/도메인 제한을 걸어 두세요.
 
@@ -56,6 +57,3 @@ npx expo export -p web
 | `npm run web` | 개발 서버 (웹) |
 | `npm run build:web` | 정적 export (`dist/`) |
 | `npm run import-uploads` | `uploads/` → 시드 등록 |
-=======
-# today-shoes
->>>>>>> 8d279e80df11eadfd720f4be61a216a6b3b6fe8d
