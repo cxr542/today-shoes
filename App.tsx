@@ -51,6 +51,7 @@ import { HomeTab } from './src/screens/HomeTab';
 import { LinksTab } from './src/screens/LinksTab';
 import { confirmAction } from './src/confirm';
 import { registerDefaultSampleIfEmpty } from './src/registerDefaultSample';
+import { registerRecentUploadIfNeeded } from './src/registerRecentUpload';
 import { registerFolderSeedsIfNeeded } from './src/registerFolderSeeds';
 import { isAutoSeedEnabled } from './src/seedRegistry';
 import { theme } from './src/theme';
@@ -123,6 +124,9 @@ function Root() {
     (async () => {
       await refresh();
       try {
+        if (await registerRecentUploadIfNeeded()) {
+          await refresh();
+        }
         if (await registerDefaultSampleIfEmpty()) {
           await refresh();
         } else if (isAutoSeedEnabled()) {
