@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "batch_id": "10cf3ee7-8a56-4782-9858-cf9f10b1e560",
+  "workouts": [{
+    "source": "healthkit",
+    "external_id": "a2404e82-cdda-490a-8ba1-147bf171dff5",
+    "healthkit_uuid": "a2404e82-cdda-490a-8ba1-147bf171dff5",
+    "started_at": "2026-10-02T00:00:00.000Z",
+    "ended_at": "2026-10-02T00:35:00.000Z",
+    "duration_seconds": 1800,
+    "duration_basis": "active",
+    "distance_meters": 5000,
+    "active_calories": 320,
+    "avg_heart_rate": 145.5,
+    "max_heart_rate": 170,
+    "sport_type": "running",
+    "is_indoor": false,
+    "source_app": null,
+    "device": {"manufacturer": "Apple", "model": "Watch"},
+    "source_metadata": {"hr_method": "healthkit_statistics"}
+  }]
+}
