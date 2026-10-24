@@ -74,7 +74,7 @@ function metadata(value: unknown, path: string): SourceMetadata | null {
     if (typeof item === 'string') byteLength(item);
     result[key] = item;
   }
-  if (record.hr_method !== undefined) result.hr_method = choice(record.hr_method, ['healthkit_statistics', 'provider_summary', 'manual'], `${path}.hr_method`);
+  if (record.hr_method !== undefined) result.hr_method = choice(record.hr_method, ['healthkit_statistics', 'provider_summary', 'manual'] as const, `${path}.hr_method`);
   return Object.keys(result).length ? result : null;
 }
 

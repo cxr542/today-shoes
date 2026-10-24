@@ -1,5 +1,6 @@
-import { ReactNode } from 'react';
-import { Pressable, StyleSheet, Text, View, ViewStyle } from 'react-native';
+import type { ReactNode } from 'react';
+import { Pressable, StyleSheet, Text, View } from 'react-native';
+import type { StyleProp, ViewStyle } from 'react-native';
 import { cardShadow, theme } from './theme';
 
 export function AppLogo() {
@@ -33,7 +34,7 @@ export function Card({
   onPress,
 }: {
   children: ReactNode;
-  style?: ViewStyle;
+  style?: StyleProp<ViewStyle>;
   onPress?: () => void;
 }) {
   const inner = (
@@ -83,6 +84,8 @@ export function PrimaryButton({
         : styles.btnOutlineText;
   return (
     <Pressable
+      accessibilityRole="button"
+      accessibilityState={{ disabled: Boolean(disabled) }}
       style={({ pressed }) => [v, pressed && styles.pressed, disabled && styles.disabled]}
       onPress={onPress}
       disabled={disabled}

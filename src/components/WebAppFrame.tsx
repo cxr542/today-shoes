@@ -29,7 +29,6 @@ const styles = StyleSheet.create({
     maxWidth: PHONE_WIDTH,
     backgroundColor: theme.bg,
     overflow: Platform.OS === 'web' ? ('visible' as const) : 'hidden',
-    // @ts-expect-error web-only shadow
     boxShadow: '0 12px 40px rgba(17,24,39,0.15)',
   },
 });
