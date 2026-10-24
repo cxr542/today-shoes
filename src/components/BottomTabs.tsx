@@ -113,7 +113,6 @@ const styles = StyleSheet.create({
     ...(Platform.OS === 'web'
       ? {
           cursor: 'pointer' as const,
-          // @ts-expect-error web
           boxShadow: '0 4px 14px rgba(234, 88, 12, 0.45)',
         }
       : {}),

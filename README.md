@@ -16,6 +16,13 @@ npm run web
 
 자세한 내용은 [WEB.md](./WEB.md)를 참고하세요.
 
+## 날짜런 · 러닝 기록 · iOS 실기기
+
+홈에서 Workout JSON 파일을 가져오거나 붙여넣어 로컬에 저장하고, 기록별로
+날짜런에 연결할 수 있습니다. 서울 기준 러닝 시작 날짜로 목표를 계산합니다.
+SDK 54 UIScene 설정과 실기기 빌드 방법은
+[Date Run 및 iOS 안내](./docs/date-run-and-ios.md)를 참고하세요.
+
 ## GitHub에 올리기
 
 ```powershell

@@ -33,6 +33,6 @@ export async function seedPegasus40IfNeeded(): Promise<boolean> {
     throw new Error('페가수스 40 시드 이미지를 불러오지 못했습니다.');
   }
 
-  await addShoe(uri, SEED_NICKNAME, PEGASUS40_RECOMMENDATION, 'album');
+  await addShoe({ front: uri }, SEED_NICKNAME, PEGASUS40_RECOMMENDATION, 'album');
   return true;
 }
