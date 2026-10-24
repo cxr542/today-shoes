@@ -5,6 +5,7 @@ import { TabPageHeader } from '../components/TabPageHeader';
 import { theme } from '../theme';
 import { Card } from '../ui';
 import { DateRunCard } from '../components/DateRunCard';
+import { RunningLibraryCard } from '../components/RunningLibraryCard';
 
 export function HomeTab({
   shoes,
@@ -39,6 +40,7 @@ export function HomeTab({
       </View>
 
       <DateRunCard />
+      <RunningLibraryCard />
 
       <View style={styles.tipBanner}>
         <Text style={styles.tipBannerTitle}>오늘의 한 줄</Text>
