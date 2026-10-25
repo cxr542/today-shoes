@@ -11,6 +11,8 @@ import { cardShadow, theme } from '../theme';
 export function ClosetTab({
   shoes,
   onOpenDetail,
+  onBackup,
+  backupBusy,
   onDelete,
   onClearAll,
   onCamera,
@@ -18,6 +20,8 @@ export function ClosetTab({
 }: {
   shoes: Shoe[];
   onOpenDetail: (shoe: Shoe) => void;
+  onBackup: () => void;
+  backupBusy: boolean;
   onDelete: (shoe: Shoe) => void;
   onClearAll?: () => void;
   onCamera: () => void;
@@ -53,6 +57,16 @@ export function ClosetTab({
           </View>
 
           <AddShoeActions onCamera={onCamera} onAlbum={onAlbum} />
+          <Pressable
+            accessibilityRole="button"
+            accessibilityLabel="사진 포함 신발장 JSON 백업"
+            disabled={backupBusy}
+            onPress={onBackup}
+            style={styles.backupButton}
+          >
+            <Text style={styles.backupButtonText}>{backupBusy ? '백업 준비 중…' : '📦 신발장 백업 (사진 포함 JSON)'}</Text>
+          </Pressable>
+          <Text style={styles.backupHint}>저장된 신발을 변경하지 않습니다. 내보낸 파일은 안전한 위치에 보관하세요.</Text>
 
           {shoes.length > 0 ? (
             <View style={styles.statsRow}>
@@ -192,6 +206,10 @@ function FlowChip({
 }
 
 const styles = StyleSheet.create({
+  backupButton: { marginHorizontal: 16, marginVertical: 8, padding: 14,
+    borderRadius: 12, alignItems: 'center', backgroundColor: '#172554' },
+  backupButtonText: { color: '#fff', fontWeight: '800', fontSize: 13 },
+  backupHint: { marginHorizontal: 18, marginBottom: 10, color: '#64748b', fontSize: 11 },
   flowCard: {
     marginHorizontal: theme.space.md,
     marginBottom: theme.space.sm,

@@ -1,4 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
+import { exportShoeBackup } from './src/shoeBackup';
 import * as ImagePicker from 'expo-image-picker';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import {
@@ -370,6 +371,19 @@ function Root() {
     await refresh();
   };
 
+  const onBackupShoes = async () => {
+    if (saving) return;
+    setSaving(true);
+    try {
+      const count = await exportShoeBackup();
+      Alert.alert('백업 내보내기', `${count}켤레와 사진이 포함된 JSON 파일을 내보냈습니다. 파일 앱 또는 다운로드 목록에 안전하게 보관해 주세요.`);
+    } catch (e) {
+      Alert.alert('백업 미완료', e instanceof Error ? e.message : String(e));
+    } finally {
+      setSaving(false);
+    }
+  };
+
   const confirmClearCloset = async () => {
     const ok = await confirmAction(
       '신발장 비우기',
@@ -423,6 +437,8 @@ function Root() {
           <ClosetTab
             shoes={shoes}
             onOpenDetail={openDetail}
+            onBackup={onBackupShoes}
+            backupBusy={saving}
             onDelete={confirmDelete}
             onClearAll={shoes.length > 0 ? confirmClearCloset : undefined}
             onCamera={pickFromCamera}

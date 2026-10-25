@@ -10,7 +10,7 @@
     "ios:device": "expo run:ios --device",
     "ios:release": "expo run:ios --device --configuration Release",
     "typecheck": "tsc --noEmit",
-    "test": "node --test src/dateRun/*.test.mjs src/import/*.test.mjs src/running/*.test.mjs plugins/*.test.mjs",
+    "test": "node --test src/dateRun/*.test.mjs src/import/*.test.mjs src/running/*.test.mjs src/shoeBackupCore.test.mjs plugins/*.test.mjs",
     "web": "expo start --web",
     "web:8081": "expo start --web --port 8081",
     "build:web": "expo export -p web",

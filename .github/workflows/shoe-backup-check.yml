@@ -1,0 +1,26 @@
+name: Phase 1 Shoe Backup Checks
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'src/shoeBackup*'
+      - 'src/screens/ClosetTab.tsx'
+      - 'App.tsx'
+      - 'package.json'
+      - '.github/workflows/shoe-backup-check.yml'
+  workflow_dispatch:
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: node --experimental-strip-types --test src/shoeBackupCore.test.mjs
+      - run: npm run typecheck
+      - run: npm test
